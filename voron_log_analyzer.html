@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -72,11 +72,11 @@ select{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e0e0
 <body>
 
 <div class="header">
-  <h1>⚡ Voron Log Analyzer</h1>
+  <h1>? Voron Log Analyzer</h1>
   <span>Klipper + KlipperScreen log visualization</span>
   <div style="margin-left:auto;display:flex;gap:8px">
     <div class="spinner" id="spinner"></div>
-    <button class="btn btn-secondary btn-sm" onclick="resetAll()">↺ Reset</button>
+    <button class="btn btn-secondary btn-sm" onclick="resetAll()">? Reset</button>
   </div>
 </div>
 
@@ -86,20 +86,20 @@ select{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e0e0
     <div>
       <div class="section-title">Log Files</div>
       <div class="drop-zone" id="dz-klippy" onclick="document.getElementById('fi-klippy').click()" ondragover="dzDrag(event,'dz-klippy')" ondragleave="dzLeave('dz-klippy')" ondrop="dzDrop(event,'klippy')">
-        <div class="icon">📋</div>
+        <div class="icon">??</div>
         <p>klippy.log</p>
         <div class="filename" id="fn-klippy">Drop or click to load</div>
       </div>
       <input type="file" id="fi-klippy" accept=".log,.txt" onchange="loadFile(event,'klippy')">
       <div style="height:8px"></div>
       <div class="drop-zone" id="dz-kscreen" onclick="document.getElementById('fi-kscreen').click()" ondragover="dzDrag(event,'dz-kscreen')" ondragleave="dzLeave('dz-kscreen')" ondrop="dzDrop(event,'kscreen')">
-        <div class="icon">🖥️</div>
+        <div class="icon">???</div>
         <p>KlipperScreen.log</p>
         <div class="filename" id="fn-kscreen">Drop or click to load</div>
       </div>
       <input type="file" id="fi-kscreen" accept=".log,.txt" onchange="loadFile(event,'kscreen')">
       <div style="height:10px"></div>
-      <button class="btn btn-primary" id="btn-parse" onclick="parseAll()" disabled style="width:100%">▶ Analyze Logs</button>
+      <button class="btn btn-primary" id="btn-parse" onclick="parseAll()" disabled style="width:100%">? Analyze Logs</button>
       <div id="parse-error"></div>
     </div>
 
@@ -123,7 +123,7 @@ select{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e0e0
       <div style="margin-bottom:8px">
         <div style="font-size:.78rem;color:#8b949e;margin-bottom:4px">
           Data Granularity
-          <span style="cursor:help;color:#4da6ff" title="Show every Nth data point. Higher values = faster rendering for large files">ⓘ</span>
+          <span style="cursor:help;color:#4da6ff" title="Show every Nth data point. Higher values = faster rendering for large files">?</span>
         </div>
         <div class="range-row">
           <input type="range" id="granularity" min="1" max="30" value="1" oninput="document.getElementById('gran-val').textContent=this.value">
@@ -173,9 +173,9 @@ select{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e0e0
     <div id="export-panel" class="hidden">
       <div class="section-title">Export</div>
       <div style="display:flex;flex-direction:column;gap:6px">
-        <button class="btn btn-secondary btn-sm" onclick="exportChartPNG()">📷 Chart as PNG</button>
-        <button class="btn btn-secondary btn-sm" onclick="exportTempCSV()">📊 Temp data CSV</button>
-        <button class="btn btn-secondary btn-sm" onclick="exportMilestoneCSV()">📋 Milestones CSV</button>
+        <button class="btn btn-secondary btn-sm" onclick="exportChartPNG()">?? Chart as PNG</button>
+        <button class="btn btn-secondary btn-sm" onclick="exportTempCSV()">?? Temp data CSV</button>
+        <button class="btn btn-secondary btn-sm" onclick="exportMilestoneCSV()">?? Milestones CSV</button>
       </div>
     </div>
   </div>
@@ -197,7 +197,7 @@ select{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e0e0
     <div id="stats-row" class="hidden">
       <div class="flex-row" style="margin-bottom:8px">
         <h2 style="margin:0">Session Statistics</h2>
-        <button class="btn btn-secondary btn-sm" onclick="toggleStatConfig()">⚙️ Configure</button>
+        <button class="btn btn-secondary btn-sm" onclick="toggleStatConfig()">?? Configure</button>
       </div>
       <div id="stat-config" class="hidden" style="margin-bottom:12px;padding:10px;background:#0d1117;border:1px solid #30363d;border-radius:6px">
         <p style="font-size:.78rem;color:#8b949e;margin-bottom:8px">Click to show/hide stats:</p>
@@ -213,7 +213,7 @@ select{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e0e0
           <input type="checkbox" id="show-annotations-chart" checked onchange="S.showAnnotations=this.checked;document.getElementById('show-annotations').checked=this.checked;renderChart()">
           <span style="font-size:.78rem;color:#8b949e">Labels</span>
         </label>
-        <button class="btn btn-secondary btn-sm" onclick="exportChartPNG()">📷 Export PNG</button>
+        <button class="btn btn-secondary btn-sm" onclick="exportChartPNG()">?? Export PNG</button>
       </div>
       <div id="chart-container"></div>
     </div>
@@ -221,7 +221,7 @@ select{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e0e0
     <div id="chart-card2" class="card hidden">
       <div class="flex-row" style="margin-bottom:10px">
         <h2 style="margin:0">Performance Metrics</h2>
-        <button class="btn btn-secondary btn-sm" onclick="exportChart2PNG()">📷 Export PNG</button>
+        <button class="btn btn-secondary btn-sm" onclick="exportChart2PNG()">?? Export PNG</button>
       </div>
       <div id="chart-container2" style="min-height:420px"></div>
     </div>
@@ -240,7 +240,7 @@ select{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e0e0
           <option value="ERROR">Error</option>
           <option value="OTHER">Other</option>
         </select>
-        <button class="btn btn-secondary btn-sm" onclick="exportMilestoneCSV()">📋 CSV</button>
+        <button class="btn btn-secondary btn-sm" onclick="exportMilestoneCSV()">?? CSV</button>
       </div>
       <div class="table-wrap">
         <table class="milestone-table">
@@ -253,16 +253,16 @@ select{background:#21262d;border:1px solid #30363d;border-radius:4px;color:#e0e0
 </div>
 
 <script>
-// ── State ─────────────────────────────────────────────────────────────────────
+// -- State ---------------------------------------------------------------------
 const S = {
   klippyRaw: null, kscreenRaw: null,
   records: [], echoes: [], sessions: [],
   activeSession: null,
   selectedSessions: [], // For multi-select mode
-  seriesVisible: { bed: true, bedTarget: true, chamber: true, extruder: true, toolhead: false, mcu: false, rpi: false },
-  systemVisible: { mcuLoad: true, taskAvg: true, bedPwm: false },
+  seriesVisible: { bed: true, bedTarget: true, chamber: true, extruder: true, extTarget: true },
+  systemVisible: { toolhead: true, mcu: true, rpi: true, mcuLoad: true, taskAvg: false, bedPwm: false },
   colors: { 
-    bed:'#ff4d4d', bedTarget:'#ff9999', chamber:'#4da6ff', extruder:'#ffaa33', 
+    bed:'#ff4d4d', bedTarget:'#ff9999', chamber:'#4da6ff', extruder:'#ffaa33', extTarget:'#ffcc88',
     toolhead:'#cc88ff', mcu:'#88ffcc', rpi:'#ffcc44',
     mcuLoad:'#ff88cc', taskAvg:'#88ccff', bedPwm:'#ffaa88'
   },
@@ -274,7 +274,7 @@ const S = {
   }
 };
 
-// ── File loading ──────────────────────────────────────────────────────────────
+// -- File loading --------------------------------------------------------------
 function loadFile(e, type) {
   const file = e.target.files[0]; if (!file) return;
   const reader = new FileReader();
@@ -288,7 +288,7 @@ function loadFile(e, type) {
 function fmtSize(b) { return b > 1e6 ? (b/1e6).toFixed(1)+'MB' : (b/1e3).toFixed(0)+'KB'; }
 function checkReady() { document.getElementById('btn-parse').disabled = !S.klippyRaw; }
 
-// ── Drag & drop ───────────────────────────────────────────────────────────────
+// -- Drag & drop ---------------------------------------------------------------
 function dzDrag(e, id) { e.preventDefault(); document.getElementById(id).classList.add('drag-over'); }
 function dzLeave(id) { document.getElementById(id).classList.remove('drag-over'); }
 function dzDrop(e, type) {
@@ -304,7 +304,7 @@ function dzDrop(e, type) {
   reader.readAsText(file);
 }
 
-// ── Parsing ───────────────────────────────────────────────────────────────────
+// -- Parsing -------------------------------------------------------------------
 function parseAll() {
   showSpinner(true);
   document.getElementById('parse-error').innerHTML = '';
@@ -407,9 +407,11 @@ function parseKscreen() {
   }
 }
 
-// ── Session detection ─────────────────────────────────────────────────────────
+// -- Session detection ---------------------------------------------------------
 function detectSessions() {
   S.sessions = [];
+
+  // Primary: use KlipperScreen job state transitions
   if (S.jobEvents && S.jobEvents.length) {
     let start = null, filename = '';
     for (const ev of S.jobEvents) {
@@ -421,13 +423,30 @@ function detectSessions() {
     }
     if (start) S.sessions.push({ start, end: new Date(S.records[S.records.length-1].wallTime), filename, duration: null });
   }
+
+  // Fallback: split by PRINT_START echo messages when no job events available
+  if (!S.sessions.length && S.echoes.length) {
+    const printStarts = S.echoes.filter(e => /PRINT_START|print_start/i.test(e.msg));
+    if (printStarts.length) {
+      printStarts.forEach((ps, i) => {
+        const nextStart = printStarts[i + 1];
+        const end = nextStart
+          ? new Date(nextStart.time.getTime() - 1000)
+          : new Date(S.records[S.records.length - 1].wallTime);
+        S.sessions.push({ start: ps.time, end, filename: 'Print ' + (i + 1), duration: (end - ps.time) / 60000 });
+      });
+    }
+  }
+
+  // Last resort: treat entire log as one session
   if (!S.sessions.length && S.records.length) {
     S.sessions.push({ start: S.records[0].wallTime, end: S.records[S.records.length-1].wallTime, filename: 'Full log', duration: null });
   }
+
   S.activeSession = S.sessions[S.sessions.length - 1];
 }
 
-// ── UI building ───────────────────────────────────────────────────────────────
+// -- UI building ---------------------------------------------------------------
 function buildUI() {
   document.getElementById('welcome-card').classList.add('hidden');
   buildSessionList();
@@ -443,7 +462,7 @@ function buildSessionList() {
   // Add "All Sessions" option at the top
   let html = `
     <div class="session-item ${S.activeSession === null && S.selectedSessions.length === 0 ? 'active' : ''}" onclick="selectSession(null)">
-      <div class="sname">📊 All Sessions</div>
+      <div class="sname">?? All Sessions</div>
       <div class="smeta">View entire log with all prints</div>
     </div>`;
   
@@ -454,12 +473,12 @@ function buildSessionList() {
     return `
     <div class="session-item ${className}" onclick="selectSession(${i}, event)">
       <div class="sname">${s.filename || 'Session '+(i+1)}</div>
-      <div class="smeta">${fmtDT(s.start)} · ${s.duration ? s.duration.toFixed(0)+'min' : '?'}</div>
+      <div class="smeta">${fmtDT(s.start)} � ${s.duration ? s.duration.toFixed(0)+'min' : '?'}</div>
     </div>`;
   }).join('');
   
   html += `<div style="font-size:.7rem;color:#8b949e;margin-top:8px;padding:4px">
-    💡 Ctrl+Click to select multiple sessions
+    ?? Ctrl+Click to select multiple sessions
   </div>`;
   
   el.innerHTML = html;
@@ -489,14 +508,13 @@ function selectSession(i, event) {
 }
 
 function buildSeriesPanel() {
+  // Chart 1: print job temps only
   const series = [
-    { key:'bed', label:'Bed Temp', color: S.colors.bed },
-    { key:'bedTarget', label:'Bed Target', color: S.colors.bedTarget },
-    { key:'chamber', label:'Chamber Temp', color: S.colors.chamber },
-    { key:'extruder', label:'Extruder Temp', color: S.colors.extruder },
-    { key:'toolhead', label:'Toolhead Board', color: S.colors.toolhead },
-    { key:'mcu', label:'MCU Temp', color: S.colors.mcu },
-    { key:'rpi', label:'Raspberry Pi', color: S.colors.rpi },
+    { key:'bed',       label:'Bed Temp',      color: S.colors.bed },
+    { key:'bedTarget', label:'Bed Target',     color: S.colors.bedTarget },
+    { key:'chamber',   label:'Chamber Temp',   color: S.colors.chamber },
+    { key:'extruder',  label:'Extruder Temp',  color: S.colors.extruder },
+    { key:'extTarget', label:'Extruder Target',color: S.colors.extTarget },
   ];
   document.getElementById('series-toggles').innerHTML = series.map(s => `
     <div class="toggle-row">
@@ -507,10 +525,14 @@ function buildSeriesPanel() {
 }
 
 function buildSystemPanel() {
+  // Chart 2: all system/hardware metrics
   const metrics = [
-    { key:'mcuLoad', label:'MCU Load %', color: S.colors.mcuLoad },
-    { key:'taskAvg', label:'Task Avg (ms)', color: S.colors.taskAvg },
-    { key:'bedPwm', label:'Bed PWM %', color: S.colors.bedPwm },
+    { key:'toolhead', label:'Toolhead Temp',  color: S.colors.toolhead },
+    { key:'mcu',      label:'MCU Temp',       color: S.colors.mcu },
+    { key:'rpi',      label:'RPi Temp',       color: S.colors.rpi },
+    { key:'mcuLoad',  label:'MCU Load %',     color: S.colors.mcuLoad },
+    { key:'taskAvg',  label:'Task Avg (ms)',  color: S.colors.taskAvg },
+    { key:'bedPwm',   label:'Bed PWM %',      color: S.colors.bedPwm },
   ];
   document.getElementById('system-toggles').innerHTML = metrics.map(m => `
     <div class="toggle-row">
@@ -522,7 +544,7 @@ function buildSystemPanel() {
 
 function renderAll() { renderStats(); renderChart(); renderChart2(); renderMilestoneTable(); }
 
-// ── Stats ─────────────────────────────────────────────────────────────────────
+// -- Stats ---------------------------------------------------------------------
 function renderStats() {
   const recs = sessionRecords();
   if (!recs.length) return;
@@ -555,14 +577,14 @@ function renderStats() {
 
   const allStats = {
     duration: { val: duration.toFixed(0)+' min', lbl: 'Session Duration', visible: S.statsVisible.duration },
-    peakBed: { val: Math.max(...bedTemps).toFixed(1)+'°C', lbl: 'Peak Bed Temp', visible: S.statsVisible.peakBed },
-    peakChamber: { val: Math.max(...chamberTemps).toFixed(1)+'°C', lbl: 'Peak Chamber Temp', visible: S.statsVisible.peakChamber },
-    maxExtruder: { val: Math.max(...extTemps).toFixed(1)+'°C', lbl: 'Max Extruder Temp', visible: S.statsVisible.maxExtruder },
-    heatsoak: { val: (hsStart && hsEnd) ? ((hsEnd.time - hsStart.time)/60000).toFixed(0)+' min' : '—', lbl: 'Heatsoak Duration', visible: S.statsVisible.heatsoak },
-    cooldown: { val: (cdStart && cdEnd) ? ((cdEnd.time - cdStart.time)/60000).toFixed(0)+' min' : '—', lbl: 'Cooldown Duration', visible: S.statsVisible.cooldown },
-    avgChamber: { val: avgChamberPrinting.toFixed(1)+'°C', lbl: 'Avg Chamber (print)', visible: S.statsVisible.avgChamber },
-    avgBed: { val: avgBedPrinting.toFixed(1)+'°C', lbl: 'Avg Bed (print)', visible: S.statsVisible.avgBed },
-    tempStability: { val: chamberStdDev.toFixed(2)+'°C', lbl: 'Chamber Stability (σ)', visible: S.statsVisible.tempStability }
+    peakBed: { val: Math.max(...bedTemps).toFixed(1)+'�C', lbl: 'Peak Bed Temp', visible: S.statsVisible.peakBed },
+    peakChamber: { val: Math.max(...chamberTemps).toFixed(1)+'�C', lbl: 'Peak Chamber Temp', visible: S.statsVisible.peakChamber },
+    maxExtruder: { val: Math.max(...extTemps).toFixed(1)+'�C', lbl: 'Max Extruder Temp', visible: S.statsVisible.maxExtruder },
+    heatsoak: { val: (hsStart && hsEnd) ? ((hsEnd.time - hsStart.time)/60000).toFixed(0)+' min' : '�', lbl: 'Heatsoak Duration', visible: S.statsVisible.heatsoak },
+    cooldown: { val: (cdStart && cdEnd) ? ((cdEnd.time - cdStart.time)/60000).toFixed(0)+' min' : '�', lbl: 'Cooldown Duration', visible: S.statsVisible.cooldown },
+    avgChamber: { val: avgChamberPrinting.toFixed(1)+'�C', lbl: 'Avg Chamber (print)', visible: S.statsVisible.avgChamber },
+    avgBed: { val: avgBedPrinting.toFixed(1)+'�C', lbl: 'Avg Bed (print)', visible: S.statsVisible.avgBed },
+    tempStability: { val: chamberStdDev.toFixed(2)+'�C', lbl: 'Chamber Stability (s)', visible: S.statsVisible.tempStability }
   };
 
   const visibleStats = Object.values(allStats).filter(s => s.visible);
@@ -608,7 +630,7 @@ function buildStatConfig() {
   ).join('');
 }
 
-// ── Chart ─────────────────────────────────────────────────────────────────────
+// -- Chart ---------------------------------------------------------------------
 function renderChart() {
   const recs = sessionRecords(); if (!recs.length) return;
   const gran = parseInt(document.getElementById('granularity').value) || 1;
@@ -617,13 +639,11 @@ function renderChart() {
   const times = sampled.map(r => r.wallTime);
 
   const traces = [];
-  if (S.seriesVisible.bed) traces.push({ x:times, y:sampled.map(r=>r.bedTemp), name:'Bed Temp', line:{color:S.colors.bed,width:2}, type:'scatter', mode:'lines', hovertemplate:'%{y:.1f}°C<extra>Bed</extra>' });
-  if (S.seriesVisible.bedTarget) traces.push({ x:times, y:sampled.map(r=>r.bedTarget), name:'Bed Target', line:{color:S.colors.bedTarget,width:1.5,dash:'dash'}, type:'scatter', mode:'lines', hovertemplate:'%{y:.0f}°C<extra>Target</extra>' });
-  if (S.seriesVisible.chamber) traces.push({ x:times, y:sampled.map(r=>r.chamberTemp), name:'Chamber', line:{color:S.colors.chamber,width:2}, type:'scatter', mode:'lines', hovertemplate:'%{y:.1f}°C<extra>Chamber</extra>' });
-  if (S.seriesVisible.extruder) traces.push({ x:times, y:sampled.map(r=>r.extTemp), name:'Extruder', line:{color:S.colors.extruder,width:1.5}, type:'scatter', mode:'lines', yaxis:'y2', hovertemplate:'%{y:.1f}°C<extra>Extruder</extra>' });
-  if (S.seriesVisible.toolhead) traces.push({ x:times, y:sampled.map(r=>r.toolheadTemp), name:'Toolhead', line:{color:S.colors.toolhead,width:1}, type:'scatter', mode:'lines', hovertemplate:'%{y:.1f}°C<extra>Toolhead</extra>' });
-  if (S.seriesVisible.mcu) traces.push({ x:times, y:sampled.map(r=>r.mcuTemp), name:'MCU', line:{color:S.colors.mcu,width:1}, type:'scatter', mode:'lines', hovertemplate:'%{y:.1f}°C<extra>MCU</extra>' });
-  if (S.seriesVisible.rpi) traces.push({ x:times, y:sampled.map(r=>r.rpiTemp), name:'RPi', line:{color:S.colors.rpi,width:1}, type:'scatter', mode:'lines', hovertemplate:'%{y:.1f}°C<extra>RPi</extra>' });
+  if (S.seriesVisible.bed) traces.push({ x:times, y:sampled.map(r=>r.bedTemp), name:'Bed Temp', line:{color:S.colors.bed,width:2}, type:'scatter', mode:'lines', hovertemplate:'%{y:.1f}�C<extra>Bed</extra>' });
+  if (S.seriesVisible.bedTarget) traces.push({ x:times, y:sampled.map(r=>r.bedTarget), name:'Bed Target', line:{color:S.colors.bedTarget,width:1.5,dash:'dash'}, type:'scatter', mode:'lines', hovertemplate:'%{y:.0f}�C<extra>Bed Target</extra>' });
+  if (S.seriesVisible.chamber) traces.push({ x:times, y:sampled.map(r=>r.chamberTemp), name:'Chamber', line:{color:S.colors.chamber,width:2}, type:'scatter', mode:'lines', hovertemplate:'%{y:.1f}�C<extra>Chamber</extra>' });
+  if (S.seriesVisible.extruder) traces.push({ x:times, y:sampled.map(r=>r.extTemp), name:'Extruder', line:{color:S.colors.extruder,width:1.5}, type:'scatter', mode:'lines', yaxis:'y2', hovertemplate:'%{y:.1f}�C<extra>Extruder</extra>' });
+  if (S.seriesVisible.extTarget) traces.push({ x:times, y:sampled.map(r=>r.extTarget), name:'Ext Target', line:{color:S.colors.extTarget,width:1,dash:'dash'}, type:'scatter', mode:'lines', yaxis:'y2', hovertemplate:'%{y:.0f}�C<extra>Ext Target</extra>' });
 
   const echoes = sessionEchoes();
   const shapes = [], annotations = [];
@@ -694,7 +714,7 @@ function renderChart() {
       // Session label at top
       annotations.push({
         x: sess.start, y: 0.98, yref:'paper',
-        text: `▶ ${sess.filename || 'Session '+(S.sessions.indexOf(sess)+1)}`,
+        text: `? ${sess.filename || 'Session '+(S.sessions.indexOf(sess)+1)}`,
         showarrow: false,
         font: {size:9, color:'#3fb950'},
         xanchor:'left', yanchor:'top',
@@ -710,8 +730,8 @@ function renderChart() {
     font:{color:'#e0e0e0',size:11},
     margin:{t:30,r:80,b:60,l:60},
     xaxis:{gridcolor:'#2a2a4a',tickformat: S.timeFormat === '12' ? '%I:%M %p' : '%H:%M',title:{text:'Time',font:{size:11}}},
-    yaxis:{gridcolor:'#2a2a4a',range:[0,130],title:{text:'Temperature (°C)',font:{size:11}},dtick:10},
-    yaxis2:{overlaying:'y',side:'right',range:[0,310],title:{text:'Extruder (°C)',font:{size:11,color:S.colors.extruder}},tickfont:{color:S.colors.extruder},gridcolor:'transparent'},
+    yaxis:{gridcolor:'#2a2a4a',range:[0,130],title:{text:'Temperature (�C)',font:{size:11}},dtick:10},
+    yaxis2:{overlaying:'y',side:'right',range:[0,310],title:{text:'Extruder (�C)',font:{size:11,color:S.colors.extruder}},tickfont:{color:S.colors.extruder},gridcolor:'transparent'},
     legend:{bgcolor:'rgba(28,33,40,0.9)',bordercolor:'#30363d',borderwidth:1},
     hovermode:'x unified',
     shapes, annotations
@@ -725,7 +745,7 @@ function renderChart() {
   });
 }
 
-// ── Milestone table ───────────────────────────────────────────────────────────
+// -- Milestone table -----------------------------------------------------------
 function renderMilestoneTable() {
   const echoes = sessionEchoes();
   const filter = document.getElementById('milestone-filter').value;
@@ -753,10 +773,10 @@ function categorize(msg, type) {
 
 function shortLabel(msg) {
   if (msg.length <= 28) return msg;
-  return msg.substring(0, 26) + '…';
+  return msg.substring(0, 26) + '�';
 }
 
-// ── Smart Annotation Layout ──────────────────────────────────────────────────
+// -- Smart Annotation Layout --------------------------------------------------
 function layoutAnnotations(messages) {
   if (!messages.length) return [];
   
@@ -796,7 +816,7 @@ function layoutAnnotations(messages) {
   return positioned;
 }
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// -- Helpers -------------------------------------------------------------------
 function sessionRecords() {
   // All sessions mode
   if (!S.activeSession && S.selectedSessions.length === 0) return S.records;
@@ -895,9 +915,9 @@ function sessionEchoes() {
   return S.echoes.filter(e => e.time >= new Date(start.getTime() - startPad) && e.time <= sessionEnd);
 }
 
-function fmtDT(d) { return d ? d.toLocaleString() : '—'; }
+function fmtDT(d) { return d ? d.toLocaleString() : '�'; }
 function fmtTime(d) { 
-  if (!d) return '—';
+  if (!d) return '�';
   if (S.timeFormat === '12') {
     return d.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit', hour12:true});
   }
@@ -918,7 +938,7 @@ function applySettings() {
   renderAll(); 
 }
 
-// ── Export ────────────────────────────────────────────────────────────────────
+// -- Export --------------------------------------------------------------------
 function exportChartPNG() {
   Plotly.downloadImage('chart-container', { format:'png', width:1600, height:800, filename:'voron_temperature_profile' });
 }
@@ -960,7 +980,7 @@ function resetAll() {
   ['session-panel','series-panel','system-panel','settings-panel','export-panel','stats-row','chart-card','chart-card2','milestone-card'].forEach(id => document.getElementById(id).classList.add('hidden'));
 }
 
-// ── Chart 2: System Metrics ───────────────────────────────────────────────────
+// -- Chart 2: System Metrics ---------------------------------------------------
 function renderChart2() {
   const recs = sessionRecords(); if (!recs.length) return;
   const gran = parseInt(document.getElementById('granularity').value) || 1;
@@ -968,29 +988,46 @@ function renderChart2() {
   const times = sampled.map(r => r.wallTime);
 
   const traces = [];
-  
-  // All metrics - no temperature axis needed
-  if (S.systemVisible.mcuLoad) traces.push({ 
-    x:times, y:sampled.map(r=>r.mcuLoad), 
-    name:'MCU Load', line:{color:S.colors.mcuLoad,width:2}, 
+
+  // Hardware temperatures (left axis, degrees C)
+  if (S.systemVisible.toolhead) traces.push({
+    x:times, y:sampled.map(r=>r.toolheadTemp),
+    name:'Toolhead Temp', line:{color:S.colors.toolhead,width:2},
     type:'scatter', mode:'lines',
-    hovertemplate:'%{y:.1f}%<extra>MCU Load</extra>' 
+    hovertemplate:'%{y:.1f}C<extra>Toolhead</extra>'
   });
-  
-  if (S.systemVisible.taskAvg) traces.push({ 
-    x:times, y:sampled.map(r=>r.taskAvg), 
-    name:'Task Avg', line:{color:S.colors.taskAvg,width:1.5,dash:'dash'}, 
-    type:'scatter', mode:'lines', yaxis:'y2',
-    hovertemplate:'%{y:.2f}ms<extra>Task</extra>' 
+  if (S.systemVisible.mcu) traces.push({
+    x:times, y:sampled.map(r=>r.mcuTemp),
+    name:'MCU Temp', line:{color:S.colors.mcu,width:2},
+    type:'scatter', mode:'lines',
+    hovertemplate:'%{y:.1f}C<extra>MCU</extra>'
   });
-  
-  if (S.systemVisible.bedPwm) traces.push({ 
-    x:times, y:sampled.map(r=>r.bedPwm ? r.bedPwm * 100 : null), 
-    name:'Bed PWM', line:{color:S.colors.bedPwm,width:1.5}, 
-    type:'scatter', mode:'lines', yaxis:'y2',
-    hovertemplate:'%{y:.1f}%<extra>Bed PWM</extra>' 
+  if (S.systemVisible.rpi) traces.push({
+    x:times, y:sampled.map(r=>r.rpiTemp),
+    name:'RPi Temp', line:{color:S.colors.rpi,width:2},
+    type:'scatter', mode:'lines',
+    hovertemplate:'%{y:.1f}C<extra>RPi</extra>'
   });
 
+  // Performance metrics (right axis)
+  if (S.systemVisible.mcuLoad) traces.push({
+    x:times, y:sampled.map(r=>r.mcuLoad),
+    name:'MCU Load %', line:{color:S.colors.mcuLoad,width:1.5,dash:'dot'},
+    type:'scatter', mode:'lines', yaxis:'y2',
+    hovertemplate:'%{y:.1f}%<extra>MCU Load</extra>'
+  });
+  if (S.systemVisible.taskAvg) traces.push({
+    x:times, y:sampled.map(r=>r.taskAvg),
+    name:'Task Avg (ms)', line:{color:S.colors.taskAvg,width:1.5,dash:'dash'},
+    type:'scatter', mode:'lines', yaxis:'y2',
+    hovertemplate:'%{y:.2f}ms<extra>Task Avg</extra>'
+  });
+  if (S.systemVisible.bedPwm) traces.push({
+    x:times, y:sampled.map(r=>r.bedPwm ? r.bedPwm * 100 : null),
+    name:'Bed PWM %', line:{color:S.colors.bedPwm,width:1.5},
+    type:'scatter', mode:'lines', yaxis:'y2',
+    hovertemplate:'%{y:.1f}%<extra>Bed PWM</extra>'
+  });
   const layout = {
     paper_bgcolor:'#1c2128', plot_bgcolor:'#16213e',
     font:{color:'#e0e0e0',size:11},
@@ -1002,7 +1039,11 @@ function renderChart2() {
     },
     yaxis:{
       gridcolor:'#2a2a4a',range:[0,100],
-      title:{text:'Performance Metrics (%)',font:{size:11}},dtick:10
+      title:{text:'Temperature (°C)',font:{size:11}},dtick:10
+    },
+    yaxis2:{overlaying:'y',side:'right',range:[0,100],
+      title:{text:'Load / PWM (%)',font:{size:11,color:'#ff88cc'}},
+      tickfont:{color:'#ff88cc'},gridcolor:'transparent'
     },
     legend:{bgcolor:'rgba(28,33,40,0.9)',bordercolor:'#30363d',borderwidth:1},
     hovermode:'x unified'
