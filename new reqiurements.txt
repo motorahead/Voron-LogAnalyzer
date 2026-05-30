@@ -1,0 +1,5 @@
+seperate jobs by print start
+make two graphs, 
+    one specific to the print job istelf and job temps, and kliiperscreen data
+    another graph for system related info. System resources etc
+include all available metrics as selectable filters for the graphs
